@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "aws-mlops"
+version = "0.1.0"
+description = ""
+authors = ["Omar Andres Castaño <omar.castano@udea.edu.co>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.11"
+scikit-learn = "^1.5.2"
+seaborn = "^0.13.2"
+fastapi = "^0.114.1"
+uvicorn = "^0.30.6"
+nest-asyncio = "^1.6.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
