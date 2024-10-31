@@ -1,41 +1,53 @@
-import seaborn as sns
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
 import fastapi
 import uvicorn
+from src.model.model import TitanicModel
+from pydantic import BaseModel
+import pandas as pd
 
-# load iris dataset
-data = sns.load_dataset("iris")
+# define bucket name and model name
+bucket_name = "trained-models-omar"
+model_name = "titanic_model.pkl"
 
-# define X and y
-X_train, X_test, y_train, y_test = train_test_split(data.drop("species", axis=1), data["species"], test_size=0.2, random_state=42)
+model = TitanicModel()
+model.load_model_from_s3(bucket_name, model_name)
 
-# instance logistic regression
-model = LogisticRegression()
-
-# fit model
-model.fit(X_train, y_train) 
-
-#define server
+# define server
 app = fastapi.FastAPI()
+
+
+# defines the input scheme
+class PredictionRequest(BaseModel):
+    sex: str
+    age: float
+    sibsp: int
+    parch: int
+    fare: float
+    pclass: str
+
+
+# defines the response scheme
+class PredictionResponse(BaseModel):
+    survived: int
+    probability: float
+
 
 # define route
 @app.get("/")
 def home():
     return {"message": "Welcome to the Iris Species Prediction API!"}
 
-# show model performance
-@app.get("/performance")
-def performance():
-    accuracy = model.score(X_test, y_test)
-    return {"accuracy": accuracy}
 
 # model prediction
 @app.post("/predict")
-def predict(sepal_length: float, sepal_width: float, petal_length: float, petal_width: float):
-    prediction = model.predict_proba([[sepal_length, sepal_width, petal_length, petal_width]])
+def predict(data: PredictionRequest):
 
-    return {"prediction": prediction[0]}
+    input_data = pd.DataFrame([data.model_dump().values()], columns=data.model_dump().keys())
+
+    prob = model.predict_proba(input_data)
+    prediction = model.predict(input_data)
+
+    return PredictionResponse(survived=prediction[0], probability=prob[0][prediction])
+
 
 if __name__ == "__main__":
 
