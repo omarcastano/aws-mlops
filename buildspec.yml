@@ -8,3 +8,4 @@ phases:
       - echo "installing dependencies"
       - pip install poetry
       - poetry install
+      
