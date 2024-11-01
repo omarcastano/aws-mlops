@@ -1,0 +1,10 @@
+version: 0.1
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.10.12
+    commands:
+      - echo "installing dependencies"
+      - pip install poetry
+      - poetry install
