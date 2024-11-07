@@ -17,4 +17,3 @@ phases:
     commands:
       - echo "========= Training Model ========="
       - poetry run python ./src/model/training.py
-      
