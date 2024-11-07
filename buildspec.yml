@@ -5,7 +5,15 @@ phases:
     runtime-versions:
       python: 3.10.12
     commands:
-      - echo "installing dependencies"
+      - echo "========= installing dependencies ========="
       - pip install poetry
       - poetry install
-      
+  pre_build:
+    commands:
+      - echo "========= Testing Step ========="
+      - poetry run pytest
+
+  build:
+    commands:
+      - echo "========= Training Model ========="
+      - poetry run python ./src/model/training.py
