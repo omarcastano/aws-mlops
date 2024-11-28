@@ -17,12 +17,12 @@ app = fastapi.FastAPI()
 
 # defines the input scheme
 class PredictionRequest(BaseModel):
-    sex: str
-    age: float
-    sibsp: int
-    parch: int
-    fare: float
-    pclass: str
+    sex: str = "male"
+    age: float = 50
+    sibsp: int = 1
+    parch: int = 0
+    fare: float = 500
+    pclass: str = "First"
 
 
 # defines the response scheme
