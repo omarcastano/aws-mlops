@@ -1,6 +1,5 @@
 #!/bin/bash
 # List the current directory contents for debugging
-cd /home/ubuntu
 echo "Current Directory:"
 pwd
 ls
