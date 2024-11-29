@@ -3,6 +3,7 @@
 echo "Current Directory:"
 pwd
 ls
+sudo mkdir -p /home/ec2-user/ml-project
 cd /home/ec2-user/ml-project/
 echo "Current Directory:"
 pwd
