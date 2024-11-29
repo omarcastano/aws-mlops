@@ -1,4 +1,7 @@
 #!/bin/bash
+# List the current directory contents for debugging
+echo "Current Directory:"
+pwd
 ls
 cd aws-mlops
 curl -sSL https://install.python-poetry.org | python
