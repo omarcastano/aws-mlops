@@ -4,6 +4,7 @@ files:
   - source: /
     destination: /home/user/ml-app/
     overwrite: true
+    
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh
