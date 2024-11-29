@@ -1,6 +1,5 @@
 #!/bin/bash
-pyenv install 3.10.12
-pyenv global 3.10.12
-pip install poetry
+curl -sSL https://install.python-poetry.org | python
+export PATH=$HOME/.local/bin:$PATH
 poetry shell
 poetry install
