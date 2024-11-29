@@ -5,7 +5,7 @@ pwd
 ls
 echo "Current Directory:"
 ls ../
-cd /home/ubuntu/app/aws-mlops
+cd /home/ubuntu/app
 curl -sSL https://install.python-poetry.org | python
 export PATH=$HOME/.local/bin:$PATH
 poetry shell
