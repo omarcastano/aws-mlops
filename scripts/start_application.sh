@@ -1,2 +1,2 @@
-#!/bin/bash
-python src/app/app.py
+# #!/bin/bash
+# python src/app/app.py
