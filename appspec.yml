@@ -2,11 +2,11 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/user/ml-app/
+    destination: /home/user2/ml-app/
     overwrite: true
-    
+
 hooks:
-  BeforeInstall:
+  Install:
     - location: scripts/install_dependencies.sh
       timeout: 300
       runas: root
