@@ -1,2 +1,2 @@
 #!/bin/bash
-python src/app/app.py
+python /home/user/ml-app/src/app/app.py
