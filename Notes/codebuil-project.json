@@ -1,0 +1,24 @@
+{
+    "name": "aws-mlops-codebuild",
+    "source": {
+        "type": "GITHUB",
+        "location": "https://github.com/omarcastano/aws-mlops"
+    },
+    "sourceVersion": "main",
+    "artifacts": {
+        "type": "NO_ARTIFACTS"
+    },
+    "environment": {
+        "type": "LINUX_CONTAINER",
+        "image": "aws/codebuild/standard:5.0",
+        "computeType": "BUILD_GENERAL1_SMALL"
+    },
+    "serviceRole": "arn:aws:iam::471112780861:role/service-role/mlops-code-build-omar",
+    "logsConfig": {
+        "cloudWatchLogs": {
+            "status": "ENABLED",
+            "groupName": "/aws/codebuild/mlops-code-build-omar",
+            "streamName": "mlops-code-build-omar"
+        }
+    }
+}
