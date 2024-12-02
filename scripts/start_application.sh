@@ -1,9 +1,9 @@
 #!/bin/bash
-curl -sSL https://install.python-poetry.org | python
-export PATH=$HOME/.local/bin:$PATH
-poetry shell
+ls
+source /root/.bashrc
 cd /home/user/ml-app
+poetry shell
 poetry install
 pwd
 ls
-python /home/user/ml-app/src/app/app.py
+poetry run python /src/app/app.py
