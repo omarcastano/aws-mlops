@@ -1,5 +1,6 @@
 #!/bin/bash
 cd /home/user/ml-app
+export PATH=$HOME/.local/bin:$PATH
 poetry shell
 poetry install
-python /home/user/ml-app/src/app/app.py
+python /src/app/app.py
