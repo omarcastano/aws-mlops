@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 User=omar
-WorkingDirectory=/home/omar/Documents/MLOps/aws/aws-mlops/src/app
+WorkingDirectory=/home/omar/ml-app
 ExecStart=poetry run uvicorn app:app --host 0.0.0.0 --port 8000
 Restart=always
 
