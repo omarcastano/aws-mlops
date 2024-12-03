@@ -9,4 +9,5 @@ poetry install
 ls
 pwd
 ls src/app
-nohup poetry run python src/app/app.py &
+cd src/app
+uvicorn app:app --host 0.0.0.0 --port 8000
