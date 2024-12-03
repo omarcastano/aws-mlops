@@ -17,3 +17,33 @@ sudo apt update
 sudo apt install -y python3.10 python3.10-venv python3.10-dev
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.10 1
 sudo update-alternatives --set python /usr/bin/python3.10
+
+
+
+#!/bin/bash
+# Update the system
+sudo apt-get update -y
+
+# Install prerequisites
+sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+
+# Add Docker's official GPG key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+# Add Docker repository
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+# Update the package database with Docker packages
+sudo apt-get update -y
+
+# Install Docker
+sudo apt-get install -y docker-ce
+
+# Start Docker service
+sudo systemctl start docker
+
+# Enable Docker to start on boot
+sudo systemctl enable docker
+
+# Add the ubuntu user to the docker group
+sudo usermod -aG docker ubuntu
