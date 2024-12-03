@@ -10,5 +10,5 @@ ls
 pwd
 ls src/app
 cd src/app
-sudo systemctl enable fastapi
-sudo systemctl start fastapi
+sudo systemctl enable python-app
+sudo systemctl start python-app
