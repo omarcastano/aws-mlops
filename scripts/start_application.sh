@@ -8,4 +8,5 @@ poetry shell
 poetry install
 ls
 pwd
+ls /src/app
 python /src/app/app.py
