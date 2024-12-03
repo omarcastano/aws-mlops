@@ -6,10 +6,6 @@ files:
     overwrite: true
 
 hooks:
-  Install:
-    - location: scripts/install_dependencies.sh
-      timeout: 300
-      runas: root
   ApplicationStart:
     - location: scripts/start_application.sh
       timeout: 300
