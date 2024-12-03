@@ -10,5 +10,4 @@ ls
 pwd
 ls src/app
 cd src/app
-pip install uvicorn
 poetry run uvicorn app:app --host 0.0.0.0 --port 8000
