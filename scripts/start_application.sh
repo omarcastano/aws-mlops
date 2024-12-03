@@ -9,4 +9,4 @@ poetry install
 ls
 pwd
 ls src/app
-poetry run python src/app/app.py
+nohup poetry run python src/app/app.py &

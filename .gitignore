@@ -4,3 +4,4 @@
 *.pyc
 .coverage
 codebuild_build.sh
+nohup.out
