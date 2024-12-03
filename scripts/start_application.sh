@@ -9,5 +9,7 @@ poetry install
 ls
 pwd
 cd
+pwd
+ls
 sudo systemctl enable python-app
 sudo systemctl start python-app
