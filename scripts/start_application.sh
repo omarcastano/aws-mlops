@@ -1,5 +1,8 @@
 #!/bin/bash
 cd /home/user/ml-app
+# Source user's profile to get correct environment
+source /home/user/.profile
+source /home/user/.bashrc
 ls
 pwd
 python3.10 --version
