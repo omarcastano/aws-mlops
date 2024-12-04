@@ -21,6 +21,35 @@ sudo update-alternatives --set python /usr/bin/python3.10
 
 
 #!/bin/bash
+# Update package list
+apt-get update -y
+
+# Install prerequisites
+apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+
+# Add Docker’s official GPG key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo tee /etc/apt/trusted.gpg.d/docker.asc
+
+# Set up the stable repository
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+# Update package list again after adding Docker repo
+apt-get update -y
+
+# Install Docker CE (Community Edition)
+apt-get install -y docker-ce
+
+# Start Docker service and enable it to start on boot
+systemctl start docker
+systemctl enable docker
+
+# Verify Docker installation
+docker --version
+
+
+
+
+#!/bin/bash
 # Update the system
 sudo apt-get update -y
 

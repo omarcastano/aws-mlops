@@ -8,7 +8,6 @@ services:
     image: ocastano/python-app
     volumes:
       - .:/app
-      - /home/omar/.aws:/root/.aws:ro
     ports:
       - 8000:8000
 
