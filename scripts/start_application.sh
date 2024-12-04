@@ -7,5 +7,6 @@
 # sudo systemctl enable python-app
 # sudo systemctl start python-app
 cd /home/omar/ml-app
+sudo docker --version
 sudo docker compose build
 sudo docker compose up -d
